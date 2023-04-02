@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>page1</title>
+  <link rel ='stylesheet' href="/static/test1.css">
+</head>
+<body>
+
+  {% csrf_token %}
+<h1>This is test Dialog Box</h1>
+<p>heloo this is testing</p>
+<button onClick="showDialog()">Contact Me?</button>
+
+<div id="overlay" onClick="hideDialog()"></div>
+
+<div id="dialog">
+
+<h2>Contact Me? <span onClick="hideDialog()">&times;</span></h2>
+<form action="result/" class ="box" method="POST">
+    {%  csrf_token %}
+  <input type="text" placeholder="Your email" name="email">
+  <textarea placeholder="Your message" name ='message'></textarea>
+  <input type="submit" value="Send">
+</form>
+</div>
+<script type="text/javascript" src="/static/main.js"></script>
+
+</body>
+</html>
